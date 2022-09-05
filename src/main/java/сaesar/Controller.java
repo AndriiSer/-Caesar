@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Controller {
 
     public static void main(String[] args) throws IOException {
-     Decrypt decrypt = new Decrypt();
+        Decrypt decrypt = new Decrypt();
         System.out.println("¬ведите путь к файлу с которого читать текст");
         Scanner scanner = new Scanner(System.in);
         decrypt.setFileNameInput(scanner.nextLine());
@@ -19,13 +19,13 @@ public class Controller {
             if (choosing == 1) {
                 System.out.println("¬ведите ключ");
                 decrypt.setShiftKey(scanner.nextInt());
-                decrypt.decryptData(decrypt.readFile(decrypt.getFileNameInput()),decrypt.getShiftKey());
+                decrypt.decryptData(decrypt.readFile(decrypt.getFileNameInput()), decrypt.getShiftKey());
                 break;
             }
             if (choosing == 2) {
                 System.out.println("¬ведите ключ");
                 decrypt.setShiftKey(scanner.nextInt());
-                decrypt.encryptData(decrypt.readFile(decrypt.getFileNameInput()),decrypt.getShiftKey());
+                decrypt.encryptData(decrypt.readFile(decrypt.getFileNameInput()), decrypt.getShiftKey());
                 break;
             }
             if (choosing == 3) {

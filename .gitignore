@@ -37,17 +37,6 @@ build/
 ### Mac OS ###
 .DS_Store
 .idea/encodings.xml
-.idea/misc.xml
-.idea/workspace.xml
-.idea/vcs.xml
+*.xml
 newFile
 outFile
-newFile
-newFile
-outpufile
-src/main/java/сaesar/OutPutFile.java
-outpufile
-newFile
-outpufile
-newFile
-newFile

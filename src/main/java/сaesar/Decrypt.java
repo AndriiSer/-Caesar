@@ -2,10 +2,15 @@ package ñaesar;
 
 
 import java.io.*;
-import java.util.*;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class Decrypt {
-    private static final char[] ALPHABET = new char[]{'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', '¨', 'Æ', 'Ç', 'È', 'É', 'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', '×', 'Ö', '×', 'Ø', 'Ù', 'Ú', 'Û', 'Ü', 'Ý', 'Þ', 'ß', 'à', 'á', 'â', 'ã', 'ä', 'å', '¸', 'æ', 'ç', 'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ð', 'ñ', 'ò', 'ó', 'õ', 'ö', '÷', 'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'þ', 'ÿ', '.', ',', '”', ':', '-', '/', '?', ' '}; //72
+    private static final char[] ALPHABET = new char[]{'À', 'Á', 'Â', 'Ã', 'Ä', 'Å', '¨', 'Æ', 'Ç', 'È', 'É',
+            'Ê', 'Ë', 'Ì', 'Í', 'Î', 'Ï', 'Ð', 'Ñ', 'Ò', 'Ó', '×', 'Ö', '×', 'Ø', 'Ù',
+            'Ú', 'Û', 'Ü', 'Ý', 'Þ', 'ß', 'à', 'á', 'â', 'ã', 'ä', 'å', '¸', 'æ', 'ç',
+            'è', 'é', 'ê', 'ë', 'ì', 'í', 'î', 'ï', 'ð', 'ñ', 'ò', 'ó', 'õ', 'ö', '÷',
+            'ø', 'ù', 'ú', 'û', 'ü', 'ý', 'þ', 'ÿ', '.', ',', '”', ':', '-', '/', '?', ' '}; //72
     private String fileNameInput;
     private String fileNameOutput;
     private String outputString;
@@ -65,7 +70,6 @@ public class Decrypt {
         writeFile(fileNameOutput, outputString);
     }
 
-
     void decryptData(String inputStr, int shiftKey) throws IOException {
         String alphabet = String.valueOf(ALPHABET);
         StringBuilder decryptStr = new StringBuilder("");
@@ -87,6 +91,7 @@ public class Decrypt {
     void brutalForce(String inputStr) throws IOException {
         String alphabet = String.valueOf(ALPHABET);
         TreeMap<Integer, String> brutalForceMap = new TreeMap<>();
+        Decrypt decrypt = new Decrypt();
         for (int shiftKey = 0; shiftKey < 72; shiftKey++) {
             StringBuilder decryptStr = new StringBuilder("");
             for (int i = 0; i < inputStr.length(); i++) {
